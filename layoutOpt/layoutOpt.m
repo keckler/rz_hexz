@@ -1,10 +1,16 @@
+clear all;
+
 validPositions = {[1], 1:6, 1:12, 1:18, 1:24, 1:30, 1:36, 1:42, [4:7, 11:15, 20:23, 27:31, 36:39, 43:47]}; %cell containing a vector for each ring. each vector contians the position numbers which are valid in each ring for assembly placement
-pitch = 1;
-batchRadii = [0 1 2 3 4 5 6];
+pitch = 22.05; %cm
+batchRadii = [0.0, (119.5+84.5)/2, (146.3+119.5)/2, (168.9+146.3)/2, (188.9+168.9)/2, (206.9+188.9)/2, (223.5+206.9)/2]; %cm
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % begin code
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%
+%pre-optimization manipulation
+%%%%%
 
 numBatches = length(batchRadii);
 
@@ -12,6 +18,15 @@ numBatches = length(batchRadii);
 totalAssemblies = 0;
 for ring = 1:length(validPositions)
     totalAssemblies = totalAssemblies + length(validPositions{ring});
+end
+
+numAssPerBatch = totalAssemblies/numBatches;
+
+%make sure number of assemblies per batch is integral
+if abs(mod(numAssPerBatch,1)) > 0.0001
+    disp('error: number of assemblies per batch is not integral');
+else
+    numAssPerBatch = round(numAssPerBatch);
 end
 
 %initialize matrix to store assembly position (ring, position) and distance from core center
@@ -45,4 +60,60 @@ end
 distances = zeros(totalAssemblies, numBatches);
 for ass = 1:totalAssemblies
     distances(ass,:) = abs(batchRadii-ringPositionRadius{ass,3});
+end
+
+%%%%%
+%cplex stuff
+%%%%%
+
+%equality constraints
+Aeq = zeros(numBatches+totalAssemblies, totalAssemblies*numBatches+1);
+beq = ones(numBatches+totalAssemblies,1);
+for batch = 1:numBatches
+    Aeq(batch, ((batch-1)*totalAssemblies+1):(batch*totalAssemblies)) = 1;
+    beq(batch) = numAssPerBatch;
+    for ass = 1:totalAssemblies
+        Aeq(numBatches+ass, (batch-1)*totalAssemblies+ass) = 1;
+    end
+end
+
+%inequality constraints
+Aineq = zeros(totalAssemblies*numBatches, totalAssemblies*numBatches+1);
+diagVec = [];
+for batch = 1:numBatches
+    diagVec = [diagVec, distances(:,batch)'];
+end
+Aineq(:,1:end-1) = diag(diagVec);
+Aineq(:,end) = -1;
+bineq = zeros(totalAssemblies*numBatches,1);
+
+%objective
+c = zeros(totalAssemblies*numBatches+1,1);
+c(end) = 1;
+
+%variable bounds
+%lb = zeros(totalAssemblies*numBatches+1,1);
+%ub = ones(totalAssemblies*numBatches+1,1);
+%ub(end) = Inf;
+
+%variable types
+ctype = '';
+for i = 1:totalAssemblies*numBatches
+    ctype(end+1) = 'B';
+end
+ctype(end+1) = 'C';
+
+%%%%%
+%solve
+%%%%%
+
+[x, objval, status, output] = cplexmilp(c, Aineq, bineq, Aeq, beq, [], [], [], [], [], ctype);
+
+%%%%%
+%post-process
+%%%%%
+
+assemblyBatches = zeros(totalAssemblies, 1);
+for batch  = 1:numBatches
+    assemblyBatches = assemblyBatches + batch*x((batch-1)*totalAssemblies+1:batch*totalAssemblies);
 end
