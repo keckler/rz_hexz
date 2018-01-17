@@ -69,7 +69,7 @@ end
 %%%%%
 
 %equality constraints
-Aeq = zeros(numBatches+totalAssemblies, totalAssemblies*numBatches+1);
+Aeq = zeros(numBatches+totalAssemblies, totalAssemblies*numBatches);
 beq = ones(numBatches+totalAssemblies,1);
 for batch = 1:numBatches
     Aeq(batch, ((batch-1)*totalAssemblies+1):(batch*totalAssemblies)) = 1;
@@ -80,18 +80,20 @@ for batch = 1:numBatches
 end
 
 %inequality constraints
-Aineq = zeros(totalAssemblies*numBatches, totalAssemblies*numBatches+1);
-diagVec = [];
-for batch = 1:numBatches
-    diagVec = [diagVec, distances(:,batch)'];
-end
-Aineq(:,1:end-1) = diag(diagVec);
-Aineq(:,end) = -1;
-bineq = zeros(totalAssemblies*numBatches,1);
+%Aineq = zeros(totalAssemblies*numBatches, totalAssemblies*numBatches+1);
+%diagVec = [];
+%for batch = 1:numBatches
+%    diagVec = [diagVec, distances(:,batch)'];
+%end
+% Aineq(:,1:end-1) = diag(diagVec);
+% Aineq(:,end) = -1;
+% bineq = zeros(totalAssemblies*numBatches,1);
 
 %objective
-c = zeros(totalAssemblies*numBatches+1,1);
-c(end) = 1;
+c = zeros(totalAssemblies*numBatches,1);
+for batch = 1:numBatches
+    c((batch-1)*totalAssemblies+1:batch*totalAssemblies) = ((numBatches+1)-batch)*distances(:,batch);
+end
 
 %variable bounds
 %lb = zeros(totalAssemblies*numBatches+1,1);
@@ -103,13 +105,13 @@ ctype = '';
 for i = 1:totalAssemblies*numBatches
     ctype(end+1) = 'B';
 end
-ctype(end+1) = 'C';
+%ctype(end+1) = 'C';
 
 %%%%%
 %solve
 %%%%%
 
-[x, objval, status, output] = cplexmilp(c, Aineq, bineq, Aeq, beq, [], [], [], [], [], ctype);
+[x, objval, status, output] = cplexmilp(c, [], [], Aeq, beq, [], [], [], [], [], ctype);
 
 %%%%%
 %post-process
