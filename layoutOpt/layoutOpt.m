@@ -2,7 +2,9 @@ clear all;
 
 validPositions = {[1], 1:6, 1:12, 1:18, 1:24, 1:30, 1:36, 1:42, [4:7, 11:15, 20:23, 27:31, 36:39, 43:47]}; %cell containing a vector for each ring. each vector contians the position numbers which are valid in each ring for assembly placement
 pitch = 22.05; %cm
-batchRadii = [0.0, (119.5+84.5)/2, (146.3+119.5)/2, (168.9+146.3)/2, (188.9+168.9)/2, (206.9+188.9)/2, (223.5+206.9)/2]; %cm
+batchRadii = [0.0, (53.065+75.045)/2, (75.045+91.911)/2, (91.911+106.129)/2, (106.129+118.656)/2, (118.656+129.981)/2, (129.981+140.396)/2];
+% for C
+%batchRadii = [0.0, (119.5+84.5)/2, (146.3+119.5)/2, (168.9+146.3)/2, (188.9+168.9)/2, (206.9+188.9)/2, (223.5+206.9)/2]; %cm
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % begin code
@@ -117,3 +119,14 @@ assemblyBatches = zeros(totalAssemblies, 1);
 for batch  = 1:numBatches
     assemblyBatches = assemblyBatches + batch*x((batch-1)*totalAssemblies+1:batch*totalAssemblies);
 end
+
+%write plot file
+fp = fopen('~/Documents/work/codes/hexes/Hexes_to_Plot.txt','w');
+fprintf(fp, 'Ring, Position, Color, Value\n');
+fprintf(fp, '#    #    #    #\n');
+
+for ass = 1:totalAssemblies
+    fprintf(fp, '%i %i SpringGreen %f\n', ringPositionRadius{ass,1}, ringPositionRadius{ass,2}, assemblyBatches(ass));
+end
+
+fclose(fp);
