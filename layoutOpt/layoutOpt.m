@@ -17,12 +17,12 @@ batchRadii = [0.0, (53.065+75.045)/2, (75.045+91.911)/2, (91.911+106.129)/2, (10
 numBatches = length(batchRadii);
 
 %count the total number of assemblies specified
-totalAssemblies = 0;
+numAss = 0;
 for ring = 1:length(validPositions)
-    totalAssemblies = totalAssemblies + length(validPositions{ring});
+    numAss = numAss + length(validPositions{ring});
 end
 
-numAssPerBatch = totalAssemblies/numBatches;
+numAssPerBatch = numAss/numBatches;
 
 %make sure number of assemblies per batch is integral
 if abs(mod(numAssPerBatch,1)) > 0.0001
@@ -32,7 +32,7 @@ else
 end
 
 %initialize matrix to store assembly position (ring, position) and distance from core center
-ringPositionRadius = cell(totalAssemblies,3);
+ringPositionRadius = cell(numAss,3);
 
 %loop over each assembly specified and assign values for position and distance
 assIdx = 1;
@@ -59,8 +59,8 @@ for ring = 1:length(validPositions)
 end
 
 %create matrix with distance from each assembly to each r-z batch radius
-distances = zeros(totalAssemblies, numBatches);
-for ass = 1:totalAssemblies
+distances = zeros(numAss, numBatches);
+for ass = 1:numAss
     distances(ass,:) = abs(batchRadii-ringPositionRadius{ass,3});
 end
 
@@ -69,13 +69,13 @@ end
 %%%%%
 
 %equality constraints
-Aeq = zeros(numBatches+totalAssemblies, totalAssemblies*numBatches);
-beq = ones(numBatches+totalAssemblies,1);
+Aeq = zeros(numBatches+numAss, numAss*numBatches);
+beq = ones(numBatches+numAss,1);
 for batch = 1:numBatches
-    Aeq(batch, ((batch-1)*totalAssemblies+1):(batch*totalAssemblies)) = 1;
+    Aeq(batch, ((batch-1)*numAss+1):(batch*numAss)) = 1;
     beq(batch) = numAssPerBatch;
-    for ass = 1:totalAssemblies
-        Aeq(numBatches+ass, (batch-1)*totalAssemblies+ass) = 1;
+    for ass = 1:numAss
+        Aeq(numBatches+ass, (batch-1)*numAss+ass) = 1;
     end
 end
 
@@ -90,9 +90,9 @@ end
 % bineq = zeros(totalAssemblies*numBatches,1);
 
 %objective
-c = zeros(totalAssemblies*numBatches,1);
+c = zeros(numAss*numBatches,1);
 for batch = 1:numBatches
-    c((batch-1)*totalAssemblies+1:batch*totalAssemblies) = ((numBatches+1)-batch)*distances(:,batch);
+    c((batch-1)*numAss+1:batch*numAss) = ((numBatches+1)-batch)*distances(:,batch);
 end
 
 %variable bounds
@@ -102,7 +102,7 @@ end
 
 %variable types
 ctype = '';
-for i = 1:totalAssemblies*numBatches
+for i = 1:numAss*numBatches
     ctype(end+1) = 'B';
 end
 %ctype(end+1) = 'C';
@@ -117,9 +117,9 @@ end
 %post-process
 %%%%%
 
-assemblyBatches = zeros(totalAssemblies, 1);
+assemblyBatches = zeros(numAss, 1);
 for batch  = 1:numBatches
-    assemblyBatches = assemblyBatches + batch*x((batch-1)*totalAssemblies+1:batch*totalAssemblies);
+    assemblyBatches = assemblyBatches + batch*x((batch-1)*numAss+1:batch*numAss);
 end
 
 %write plot file
@@ -127,7 +127,7 @@ fp = fopen('~/Documents/work/codes/hexes/Hexes_to_Plot.txt','w');
 fprintf(fp, 'Ring, Position, Color, Value\n');
 fprintf(fp, '#    #    #    #\n');
 
-for ass = 1:totalAssemblies
+for ass = 1:numAss
     fprintf(fp, '%i %i SpringGreen %f\n', ringPositionRadius{ass,1}, ringPositionRadius{ass,2}, assemblyBatches(ass));
 end
 
