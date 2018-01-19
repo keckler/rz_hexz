@@ -15,6 +15,7 @@ batchRadii = [0.0, (53.065+75.045)/2, (75.045+91.911)/2, (91.911+106.129)/2, (10
 %%%%%
 
 numBatches = length(batchRadii);
+numRings = length(validPositions);
 
 %count the total number of assemblies specified
 numAss = 0;
@@ -69,8 +70,8 @@ end
 %%%%%
 
 %equality constraints
-Aeq = zeros(numBatches+numAss, numAss*numBatches);
-beq = ones(numBatches+numAss,1);
+Aeq = zeros(numBatches+numAss, numAss*numBatches+6);
+beq = ones(numBatches+numAss, 1);
 for batch = 1:numBatches
     Aeq(batch, ((batch-1)*numAss+1):(batch*numAss)) = 1;
     beq(batch) = numAssPerBatch;
@@ -80,24 +81,75 @@ for batch = 1:numBatches
 end
 
 %inequality constraints
-%Aineq = zeros(totalAssemblies*numBatches, totalAssemblies*numBatches+1);
-%diagVec = [];
-%for batch = 1:numBatches
-%    diagVec = [diagVec, distances(:,batch)'];
-%end
-% Aineq(:,1:end-1) = diag(diagVec);
-% Aineq(:,end) = -1;
-% bineq = zeros(totalAssemblies*numBatches,1);
+Aineq = zeros(6*2*numBatches, numAss*numBatches+6);
+bineq = numAssPerBatch/6*ones(6*2*numBatches, 1);
+bineq(2:2:end) = -bineq(2:2:end);
+for batch = 1:numBatches
+    for ass = 1:numAss
+        ring = ringPositionRadius{ass, 1};
+        pos = ringPositionRadius{ass, 2};
+        if ring == 1
+        else
+            if pos <= (ring-1)*1
+                Aineq((batch-1)*12+1, (batch-1)*numAss+ass) = 1;
+                Aineq((batch-1)*12+2, (batch-1)*numAss+ass) = -1;
+                Aineq((batch-1)*12+11, (batch-1)*numAss+ass) = 1;
+                Aineq((batch-1)*12+12, (batch-1)*numAss+ass) = -1;
+            elseif pos <= (ring-1)*2
+                Aineq((batch-1)*12+1, (batch-1)*numAss+ass) = 1;
+                Aineq((batch-1)*12+2, (batch-1)*numAss+ass) = -1;
+                Aineq((batch-1)*12+7, (batch-1)*numAss+ass) = 1;
+                Aineq((batch-1)*12+8, (batch-1)*numAss+ass) = -1;
+            elseif pos <= (ring-1)*3
+                Aineq((batch-1)*12+3, (batch-1)*numAss+ass) = 1;
+                Aineq((batch-1)*12+4, (batch-1)*numAss+ass) = -1;
+                Aineq((batch-1)*12+7, (batch-1)*numAss+ass) = 1;
+                Aineq((batch-1)*12+8, (batch-1)*numAss+ass) = -1;
+            elseif pos <= (ring-1)*4
+                Aineq((batch-1)*12+3, (batch-1)*numAss+ass) = 1;
+                Aineq((batch-1)*12+4, (batch-1)*numAss+ass) = -1;
+                Aineq((batch-1)*12+9, (batch-1)*numAss+ass) = 1;
+                Aineq((batch-1)*12+10, (batch-1)*numAss+ass) = -1;
+            elseif pos <= (ring-1)*5
+                Aineq((batch-1)*12+5, (batch-1)*numAss+ass) = 1;
+                Aineq((batch-1)*12+6, (batch-1)*numAss+ass) = -1;
+                Aineq((batch-1)*12+9, (batch-1)*numAss+ass) = 1;
+                Aineq((batch-1)*12+10, (batch-1)*numAss+ass) = -1;
+            elseif pos <= (ring-1)*6
+                Aineq((batch-1)*12+5, (batch-1)*numAss+ass) = 1;
+                Aineq((batch-1)*12+6, (batch-1)*numAss+ass) = -1;
+                Aineq((batch-1)*12+11, (batch-1)*numAss+ass) = 1;
+                Aineq((batch-1)*12+12, (batch-1)*numAss+ass) = -1;
+            else
+                disp('error: something is wrong with the symmetry partitioning');
+                disp(pos);
+            end
+        end
+    end
+end
+Aineq(1:12:end, end-5) = -1;
+Aineq(2:12:end, end-5) = -1;
+Aineq(3:12:end, end-4) = -1;
+Aineq(4:12:end, end-4) = -1;
+Aineq(5:12:end, end-3) = -1;
+Aineq(6:12:end, end-3) = -1;
+Aineq(7:12:end, end-2) = -1;
+Aineq(8:12:end, end-2) = -1;
+Aineq(9:12:end, end-1) = -1;
+Aineq(10:12:end, end-1) = -1;
+Aineq(11:12:end, end) = -1;
+Aineq(12:12:end, end) = -1;
 
 %objective
-c = zeros(numAss*numBatches,1);
+c = zeros(numAss*numBatches+6, 1);
 for batch = 1:numBatches
     c((batch-1)*numAss+1:batch*numAss) = ((numBatches+1)-batch)*distances(:,batch);
 end
+c(end-5:end) = 1;
 
 %variable bounds
-%lb = zeros(totalAssemblies*numBatches+1,1);
-%ub = ones(totalAssemblies*numBatches+1,1);
+lb = -Inf*ones(numAss*numBatches+6,1);
+ub = Inf*ones(numAss*numBatches+6,1);
 %ub(end) = Inf;
 
 %variable types
@@ -105,13 +157,13 @@ ctype = '';
 for i = 1:numAss*numBatches
     ctype(end+1) = 'B';
 end
-%ctype(end+1) = 'C';
+ctype(end+1:end+6) = 'C';
 
 %%%%%
 %solve
 %%%%%
 
-[x, objval, status, output] = cplexmilp(c, [], [], Aeq, beq, [], [], [], [], [], ctype);
+[x, objval, status, output] = cplexmilp(c, Aineq, bineq, Aeq, beq, [], [], [], lb, ub, ctype);
 
 %%%%%
 %post-process
