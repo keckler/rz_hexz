@@ -1840,7 +1840,7 @@ def makeinput_critcycle1(orgfilename, eqcycle_days1, eqcycle_busteps):
 			serp.write("\n")
 			serp.write(includemat)
 			serp.write("\n")
-			serp.write("include 'BnB_nonfuel'")
+			serp.write("include '"+orgfilename+"_nonfuel'")
 			serp.close()
 
 	return geomfile_target
@@ -1910,7 +1910,7 @@ def makeinput_critcycle2(orgfilename, eqcycle_days1, eqcycle_busteps, stage2_neu
 			includemat = "include \"" + matfilename_target + "\""
 			serp.write(includemat)
 			serp.write("\n")
-			serp.write("include 'BnB_nonfuel'")
+			serp.write("include '"+orgfilename+"_nonfuel'")
 			serp.close()
 
 	return geomfile_target
@@ -1985,7 +1985,7 @@ def makeinput_eqcycle1(orgfilename, eqcycle_days2, eqcycle_busteps):
 			serp.write("\n")
 			serp.write(includemat)
 			serp.write("\n")
-			serp.write("include 'BnB_nonfuel'")
+			serp.write("include '"+orgfilename+"_nonfuel'")
 			serp.close()
 
 	return geomfile_target
@@ -2055,7 +2055,7 @@ def makeinput_eqcycle2(orgfilename, eqcycle_days2, eqcycle_busteps, stage2_neutr
 			includemat = "include \"" + matfilename_target + "\""
 			serp.write(includemat)
 			serp.write("\n")
-			serp.write("include 'BnB_nonfuel'")
+			serp.write("include '"+orgfilename+"_nonfuel'")
 			serp.close()
 
 	return geomfile_target
