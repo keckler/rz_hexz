@@ -1,0 +1,96 @@
+----- THERMAL-HYDRAULIC DETAILS-------------------
+ 
+  Channels per assembly:       
+  ---------------------------------  
+  Interior:   294 
+  Edge:       42 
+  Corner:     6 
+  Total:      342
+ 
+  Flow-area:       
+  ---------------------------------  
+  Interior:   20.6353 mm^2 
+  Edge:       42.3707 mm^2 
+  Corner:     12.5340 mm^2 
+  Ass. total: 79.2156 cm^2 
+ 
+  Hydraulic diameter:       
+  ------------------------------------------  
+  Interior:   3.8570 mm 
+  Edge:       4.8409 mm 
+  Corner:     3.1766 mm 
+  Ass. total: 4.0329 mm 
+ 
+  Wetted perimeter per channel:       
+  ----------------------------------------  
+  Interior:   21.4003 mm 
+  Edge:       35.0108 mm 
+  Corner:     15.7827 mm 
+  Ass. total: 785.6840 cm 
+ 
+  Flow velocity in peak-power assembly at full power/flow:
+  ------------------------------------------------------------  
+  Interior:   10.9507 m/s 
+  Edge:       11.9992 m/s 
+  Corner:     8.0792 m/s 
+  Average:    11.1590 m/s 
+ 
+  Flow velocity in average-power assembly at full power/flow:
+  ---------------------------------------------------------------  
+  Interior:   4.9776 m/s 
+  Edge:       5.4542 m/s 
+  Corner:     3.6724 m/s 
+  Average:    5.0723 m/s 
+ 
+  Flow velocity in peak-power assembly at decay power and natural circulation flow:
+  -------------------------------------------------------------------------------------  
+  Interior:   0.5838 m/s 
+  Edge:       0.9012 m/s 
+  Corner:     0.3172 m/s 
+  Average:    0.6526 m/s 
+ 
+  Flow velocity in average-power assembly at decay power and natural circulation flow:
+  ----------------------------------------------------------------------------------------  
+  Interior:   0.2654 m/s 
+  Edge:       0.4096 m/s 
+  Corner:     0.1442 m/s 
+  Average:    0.2966 m/s 
+ 
+  Inlet Reynolds number in peak-power assembly at full power/flow: 
+  ---------------------------------------------------------------------  
+  Interior:   123186 
+  Edge:       169413 
+  Corner:     74852 
+  Average:    128015 
+ 
+  Inlet Reynolds number in average-power assembly at full power/flow: 
+  ------------------------------------------------------------------------  
+  Interior:   55994 
+  Edge:       77006 
+  Corner:     34023 
+  Average:    58189 
+ 
+  Inlet Reynolds number in peak-power assembly at decay power and natural circulation flow: 
+  --------------------------------------------------------------------------------------------  
+  Interior:   7341 
+  Edge:       9214 
+  Corner:     6046 
+  Average:    7548 
+ 
+  Friction coefficient at full power/flow in peak-power assembly: 
+  --------------------------------------------------------------------  
+  Interior:   0.01936 
+  Edge:       0.02024 
+  Corner:     0.02930 
+ 
+  Friction coefficient at full power/flow in average-power assembly: 
+  -----------------------------------------------------------------------  
+  Interior:   0.02232 
+  Edge:       0.02333 
+  Corner:     0.03377 
+ 
+  Friction coefficient at decay power, natural circulation flow in peak-power assembly: 
+  --------------------------------------------------------------------------------------------  
+  Interior:   0.03508 
+  Edge:       0.03612 
+  Corner:     0.04743 
