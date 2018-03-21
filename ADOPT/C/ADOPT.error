@@ -1,0 +1,2 @@
+intel(3):ERROR:105: Unable to locate a modulefile for 'intel/2013_sp1.4.211'
+ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'openmpi/1.6.5-intel'
