@@ -186,16 +186,17 @@ cell Batch7Axial9outside 0907 outside assembly  % Batch: 7/7, Axial: 9/9
 % ################################################################################### //// ######## //// ####### 
 
 % --- radial reflector assembly
-cell radialreflectorcell0 0077 radialreflectormat0 -assembly
-cell radialreflectorcell1 0177 radialreflectormat1 -assembly
-cell radialreflectorcell2 0277 radialreflectormat2 -assembly
-cell radialreflectorcell3 0377 radialreflectormat3 -assembly
-cell radialreflectorcell4 0477 radialreflectormat4 -assembly
-cell radialreflectorcell5 0577 radialreflectormat5 -assembly
-cell radialreflectorcell6 0677 radialreflectormat6 -assembly
-cell radialreflectorcell7 0777 radialreflectormat7 -assembly
-cell radialreflectorcell8 0877 radialreflectormat8 -assembly
-cell radialreflectorcell9 0977 radialreflectormat9 -assembly
+cell radialreflectorcell0 0077 belowcoreradialreflectormat -assembly
+cell radialreflectorcell1 0177 radialreflectormat0 -assembly
+cell radialreflectorcell2 0277 radialreflectormat1 -assembly
+cell radialreflectorcell3 0377 radialreflectormat2 -assembly
+cell radialreflectorcell4 0477 radialreflectormat3 -assembly
+cell radialreflectorcell5 0577 radialreflectormat4 -assembly
+cell radialreflectorcell6 0677 radialreflectormat5 -assembly
+cell radialreflectorcell7 0777 radialreflectormat6 -assembly
+cell radialreflectorcell8 0877 radialreflectormat7 -assembly
+cell radialreflectorcell9 0977 radialreflectormat8 -assembly
+cell radialreflectorcell10 1077 abovecoreradialreflectormat -assembly
 
 cell radialreflectorcell0outside 0077 outside assembly
 cell radialreflectorcell1outside 0177 outside assembly
@@ -207,18 +208,20 @@ cell radialreflectorcell6outside 0677 outside assembly
 cell radialreflectorcell7outside 0777 outside assembly
 cell radialreflectorcell8outside 0877 outside assembly
 cell radialreflectorcell9outside 0977 outside assembly
+cell radialreflectorcell10outside 1077 outside assembly
 
 % --- radial shield assembly
-cell radialshieldcell0 0088 radialshieldmat0 -assembly
-cell radialshieldcell1 0188 radialshieldmat1 -assembly
-cell radialshieldcell2 0288 radialshieldmat2 -assembly
-cell radialshieldcell3 0388 radialshieldmat3 -assembly
-cell radialshieldcell4 0488 radialshieldmat4 -assembly
-cell radialshieldcell5 0588 radialshieldmat5 -assembly
-cell radialshieldcell6 0688 radialshieldmat6 -assembly
-cell radialshieldcell7 0788 radialshieldmat7 -assembly
-cell radialshieldcell8 0888 radialshieldmat8 -assembly
-cell radialshieldcell9 0988 radialshieldmat9 -assembly
+cell radialshieldcell0 0088 belowcoreradialshieldmat -assembly
+cell radialshieldcell1 0188 radialshieldmat0 -assembly
+cell radialshieldcell2 0288 radialshieldmat1 -assembly
+cell radialshieldcell3 0388 radialshieldmat2 -assembly
+cell radialshieldcell4 0488 radialshieldmat3 -assembly
+cell radialshieldcell5 0588 radialshieldmat4 -assembly
+cell radialshieldcell6 0688 radialshieldmat5 -assembly
+cell radialshieldcell7 0788 radialshieldmat6 -assembly
+cell radialshieldcell8 0888 radialshieldmat7 -assembly
+cell radialshieldcell9 0988 radialshieldmat8 -assembly
+cell radialshieldcell10 1088 abovecoreradialshieldmat -assembly
 
 cell radialshieldcell0outside 0088 outside assembly
 cell radialshieldcell1outside 0188 outside assembly
@@ -230,6 +233,7 @@ cell radialshieldcell6outside 0688 outside assembly
 cell radialshieldcell7outside 0788 outside assembly
 cell radialshieldcell8outside 0888 outside assembly
 cell radialshieldcell9outside 0988 outside assembly
+cell radialshieldcell10outside 1088 outside assembly
 
 % --- sodium 'assembly'
 cell extrasodiumcell0 0066 outsidecoolantmat -assembly
@@ -242,6 +246,7 @@ cell extrasodiumcell6 0666 outsidecoolantmat -assembly
 cell extrasodiumcell7 0766 outsidecoolantmat -assembly
 cell extrasodiumcell8 0866 outsidecoolantmat -assembly
 cell extrasodiumcell9 0966 outsidecoolantmat -assembly
+cell extrasodiumcell10 1066 outsidecoolantmat -assembly
 
 cell extrasodiumcell0outside 0066 outside assembly
 cell extrasodiumcell1outside 0166 outside assembly
@@ -253,11 +258,12 @@ cell extrasodiumcell6outside 0666 outside assembly
 cell extrasodiumcell7outside 0766 outside assembly
 cell extrasodiumcell8outside 0866 outside assembly
 cell extrasodiumcell9outside 0966 outside assembly
+cell extrasodiumcell10outside 1066 outside assembly
 
 % --- gas plenum 'assembly'
-cell gasplenumcell 2555 uppergasplenummat -assembly
+cell gasplenumcell 1055 uppergasplenummat -assembly
 
-cell gasplenumcelloutside 2555 outside assembly
+cell gasplenumcelloutside 1055 outside assembly
 
 % ################################################################################### //// ######## //// ####### 
 % ##################### Core cells from filled lattices ############################# //// ######## //// ####### 
@@ -275,7 +281,7 @@ cell coreAxial7 0 fill 7 fuelaxial7 -fuelaxial8 -radialsystem
 cell coreAxial8 0 fill 8 fuelaxial8 -fuelaxial9 -radialsystem
 cell coreAxial9 0 fill 9 fuelaxial9 -fuelaxial10 -radialsystem
 
-cell plenumAxial25 0 fill 10 fuelaxial10 -upperreflector -radialsystem
+cell plenumAxial10 0 fill 10 fuelaxial10 -upperreflector -radialsystem
 
 % ################################################################################### //// ######## //// ####### 
 % ##################### Upper cells ################################################# //// ######## //// ####### 
@@ -883,15 +889,15 @@ det AssemblyPowerAxial7 n dl 7 dr -8 void
 det AssemblyPowerAxial8 n dl 8 dr -8 void
 det AssemblyPowerAxial9 n dl 9 dr -8 void
 
-det AssemblyGammaPowerAxial1 p dl 1 dr -12 void
-det AssemblyGammaPowerAxial2 p dl 2 dr -12 void
-det AssemblyGammaPowerAxial3 p dl 3 dr -12 void
-det AssemblyGammaPowerAxial4 p dl 4 dr -12 void
-det AssemblyGammaPowerAxial5 p dl 5 dr -12 void
-det AssemblyGammaPowerAxial6 p dl 6 dr -12 void
-det AssemblyGammaPowerAxial7 p dl 7 dr -12 void
-det AssemblyGammaPowerAxial8 p dl 8 dr -12 void
-det AssemblyGammaPowerAxial9 p dl 9 dr -12 void
+%det AssemblyGammaPowerAxial1 p dl 1 dr -12 void
+%det AssemblyGammaPowerAxial2 p dl 2 dr -12 void
+%det AssemblyGammaPowerAxial3 p dl 3 dr -12 void
+%det AssemblyGammaPowerAxial4 p dl 4 dr -12 void
+%det AssemblyGammaPowerAxial5 p dl 5 dr -12 void
+%det AssemblyGammaPowerAxial6 p dl 6 dr -12 void
+%det AssemblyGammaPowerAxial7 p dl 7 dr -12 void
+%det AssemblyGammaPowerAxial8 p dl 8 dr -12 void
+%det AssemblyGammaPowerAxial9 p dl 9 dr -12 void
 
 det Batch1Energy n dm Batch1Axial5 de spectrumGrid
 det Batch2Energy n dm Batch2Axial5 de spectrumGrid
@@ -908,7 +914,7 @@ ene spectrumGrid 3 1000 1E-4 1E1
 % ################################################################################### //// ######## //// #######
 
 % --- turn on coupled neutron/photon transport
-set ngamma 2
+%set ngamma 2
 
 % --- include material definitions in separate file
 include "A_nonfuel"    
