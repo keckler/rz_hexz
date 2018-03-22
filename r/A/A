@@ -154,33 +154,7 @@ cell outdowninner 0 outside -systembottom  -radialsystem
 cell outdownouter 0 outside -systembottom   radialsystem              
 cell outupinner   0 outside  systemtop     -radialsystem              
 cell outupouter   0 outside  systemtop      radialsystem              
-cell outxradial   0 outside  systembottom  -systemtop    radialsystem 
-
-% ################################################################################### //// ######## //// ####### 
-% ##################### Include materials ########################################### //// ######## //// ####### 
-% ################################################################################### //// ######## //// ####### 
-
-
-% ################################################################################### //// ######## //// ####### 
-% ##################### XS-paths #################################################### //// ######## //// ####### 
-% ################################################################################### //// ######## //// ####### 
-
-set acelib "/global/home/groups/co_nuclear/serpent/xsdata_2/endfb7/sss_endfb7u.xsdata"
-set declib "/global/home/groups/co_nuclear/serpent/xsdata_2/endfb7/sss_endfb7.dec"
-set nfylib "/global/home/groups/co_nuclear/serpent/xsdata_2/endfb7/sss_endfb7.nfy"
-
-
-% ################################################################################### //// ######## //// ####### 
-% ##################### Criticality ################################################# //// ######## //// ####### 
-% ################################################################################### //// ######## //// ####### 
-
-set pop 200 10 20
-
-% ################################################################################### //// ######## //// ####### 
-% ##################### Power ####################################################### //// ######## //// ####### 
-% ################################################################################### //// ######## //// ####### 
-
-set power 1400000000.0
+cell outxradial   0 outside  systembottom  -systemtop    radialsystem
 
 % ################################################################################### //// ######## //// ####### 
 % ##################### Power distribution detector ################################# //// ######## //// ####### 
@@ -250,90 +224,70 @@ det PowerBatch7Axial7 dm Batch7Axial7 dr -8 void
 det PowerBatch7Axial8 dm Batch7Axial8 dr -8 void
 det PowerBatch7Axial9 dm Batch7Axial9 dr -8 void
 
-% ################################################################################### //// ######## //// ####### 
-% ##################### Flux distribution detector ################################## //// ######## //// ####### 
-% ################################################################################### //// ######## //// ####### 
+det Batch1Energy n dm Batch1Axial5 de spectrumGrid
+det Batch2Energy n dm Batch2Axial5 de spectrumGrid
+det Batch3Energy n dm Batch3Axial5 de spectrumGrid
+det Batch4Energy n dm Batch4Axial5 de spectrumGrid
+det Batch5Energy n dm Batch5Axial5 de spectrumGrid
+det Batch6Energy n dm Batch6Axial5 de spectrumGrid
+det Batch7Energy n dm Batch7Axial5 de spectrumGrid
 
-det FluxBatch1Axial1 dm Batch1Axial1
-det FluxBatch1Axial2 dm Batch1Axial2
-det FluxBatch1Axial3 dm Batch1Axial3
-det FluxBatch1Axial4 dm Batch1Axial4
-det FluxBatch1Axial5 dm Batch1Axial5
-det FluxBatch1Axial6 dm Batch1Axial6
-det FluxBatch1Axial7 dm Batch1Axial7
-det FluxBatch1Axial8 dm Batch1Axial8
-det FluxBatch1Axial9 dm Batch1Axial9
-det FluxBatch2Axial1 dm Batch2Axial1
-det FluxBatch2Axial2 dm Batch2Axial2
-det FluxBatch2Axial3 dm Batch2Axial3
-det FluxBatch2Axial4 dm Batch2Axial4
-det FluxBatch2Axial5 dm Batch2Axial5
-det FluxBatch2Axial6 dm Batch2Axial6
-det FluxBatch2Axial7 dm Batch2Axial7
-det FluxBatch2Axial8 dm Batch2Axial8
-det FluxBatch2Axial9 dm Batch2Axial9
-det FluxBatch3Axial1 dm Batch3Axial1
-det FluxBatch3Axial2 dm Batch3Axial2
-det FluxBatch3Axial3 dm Batch3Axial3
-det FluxBatch3Axial4 dm Batch3Axial4
-det FluxBatch3Axial5 dm Batch3Axial5
-det FluxBatch3Axial6 dm Batch3Axial6
-det FluxBatch3Axial7 dm Batch3Axial7
-det FluxBatch3Axial8 dm Batch3Axial8
-det FluxBatch3Axial9 dm Batch3Axial9
-det FluxBatch4Axial1 dm Batch4Axial1
-det FluxBatch4Axial2 dm Batch4Axial2
-det FluxBatch4Axial3 dm Batch4Axial3
-det FluxBatch4Axial4 dm Batch4Axial4
-det FluxBatch4Axial5 dm Batch4Axial5
-det FluxBatch4Axial6 dm Batch4Axial6
-det FluxBatch4Axial7 dm Batch4Axial7
-det FluxBatch4Axial8 dm Batch4Axial8
-det FluxBatch4Axial9 dm Batch4Axial9
-det FluxBatch5Axial1 dm Batch5Axial1
-det FluxBatch5Axial2 dm Batch5Axial2
-det FluxBatch5Axial3 dm Batch5Axial3
-det FluxBatch5Axial4 dm Batch5Axial4
-det FluxBatch5Axial5 dm Batch5Axial5
-det FluxBatch5Axial6 dm Batch5Axial6
-det FluxBatch5Axial7 dm Batch5Axial7
-det FluxBatch5Axial8 dm Batch5Axial8
-det FluxBatch5Axial9 dm Batch5Axial9
-det FluxBatch6Axial1 dm Batch6Axial1
-det FluxBatch6Axial2 dm Batch6Axial2
-det FluxBatch6Axial3 dm Batch6Axial3
-det FluxBatch6Axial4 dm Batch6Axial4
-det FluxBatch6Axial5 dm Batch6Axial5
-det FluxBatch6Axial6 dm Batch6Axial6
-det FluxBatch6Axial7 dm Batch6Axial7
-det FluxBatch6Axial8 dm Batch6Axial8
-det FluxBatch6Axial9 dm Batch6Axial9
-det FluxBatch7Axial1 dm Batch7Axial1
-det FluxBatch7Axial2 dm Batch7Axial2
-det FluxBatch7Axial3 dm Batch7Axial3
-det FluxBatch7Axial4 dm Batch7Axial4
-det FluxBatch7Axial5 dm Batch7Axial5
-det FluxBatch7Axial6 dm Batch7Axial6
-det FluxBatch7Axial7 dm Batch7Axial7
-det FluxBatch7Axial8 dm Batch7Axial8
-det FluxBatch7Axial9 dm Batch7Axial9
+ene spectrumGrid 3 1000 1E-4 1E1
+
+% ################################################################################### //// ######## //// ####### 
+% ##################### Set options ################################################# //// ######## //// ####### 
+% ################################################################################### //// ######## //// #######
+
+% --- turn on coupled neutron/photon transport
+%set ngamma 2
+
+% --- include material definitions in separate file
+include "A_nonfuel"    
+include "A_mburn"
+
+% --- set data library locations
+set acelib "/global/home/groups/co_nuclear/serpent/xsdata_2/endfb7/sss_endfb7u.xsdata" "/global/scratch/ckeckler/photon.xsdata"
+set declib "/global/home/groups/co_nuclear/serpent/xsdata_2/endfb7/sss_endfb7.dec"
+set nfylib "/global/home/groups/co_nuclear/serpent/xsdata_2/endfb7/sss_endfb7.nfy"
+set pdatadir "/global/home/groups/co_nuclear/serpent/photon_data"
+
+% --- set burn power
+set power 1400000000.0
 
 % --- Reduce energy grid size:
 set egrid 5E-3 1E-5 10.0
+
 % --- Cut-offs:
 set fpcut   1E-9
 set stabcut 1E-12
 set ttacut  1E-18
 set xsfcut  1E-6
 
+% --- ???
 set pcc 0
-set nbuf 1000
-set pop 10000 300 50
 set printm 1
+set nbuf 8
+%set rfw yes binaryRestart
 
-set inventory U-238 act fp
-
-
+% --- set depletion settings
 dep daystep 556.9956984378534 556.9956984378534 556.9956984378534 
-include "A_eq1_mburn"
-include 'A_nonfuel'
+set inventory all
+
+% --- criticality settings
+set pop 600000 520 40 1 40 40
+set his 1
+
+% --- memory optimization
+set opti 1
+
+% --- perturbation settings
+sens resp keff 1
+sens pert matlist all
+sens pert zailist 110230
+sens pert xs all
+sens opt egrid pertgrid
+
+ene pertgrid 1 1E-10 1E3
+
+% --- print cross sections
+%set xsplot 1000 1E-3 1E1
