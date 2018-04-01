@@ -88,6 +88,11 @@ for i = 1:nsteps
     end
 end
 
+%plot batch powers
+figure;
+bar3(powerMatrix(1:nbatches,:)'/10^6);
+xlabel('batch'); ylabel('burn step'); zlabel('batch integrated power (MW)');
+
 %plot difference in batch powers
 figure;
 bar3(abs((powerMatrix(1:nbatches,:)-powerMatrix(nbatches+1:nbatches*2,:))./powerMatrix(1:nbatches,:)*100)');
@@ -106,4 +111,45 @@ for i = 1:nsteps
     legend(legendEntries);
 end
 
+clearvars -except nsteps nbatches naxial nenbins rz_sens hexz_sens;
+
+%%%%%
 %results from sensitivity files
+%%%%%
+sensMatrix = zeros(nbatches*2, nsteps);
+
+%collect data
+for i = 1:nsteps
+    run(rz_sens{i});
+    for j = 1:nbatches
+        worth = 0;
+        for k = 1:naxial
+            matidx = eval(sprintf('iSENS_MAT_Batch%iAxial%i',j,k));
+            worth = worth + ADJ_PERT_KEFF_SENS_E_INT(matidx,iSENS_ZAI_110230,iSENS_PERT_TOT_XS,1);
+        end
+        sensMatrix(j,i) = worth;
+    end
+end
+
+for i = 1:nsteps
+    run(hexz_sens{i});
+    for j = 1:nbatches
+        worth = 0;
+        for k = 1:naxial
+            matidx = eval(sprintf('iSENS_MAT_Batch%iAxial%i',j,k));
+            worth = worth + ADJ_PERT_KEFF_SENS_E_INT(matidx,iSENS_ZAI_110230,iSENS_PERT_TOT_XS,1);
+        end
+        sensMatrix(nbatches+j,i) = worth;
+    end
+end
+
+%plot batch sensitivities
+figure;
+bar3(sensMatrix(1:nbatches,:)'/10^6);
+xlabel('batch'); ylabel('burn step'); zlabel('batch integrated sodium worth (\delta k/k)');
+
+%plot difference in batch sensitivities
+figure;
+%bar3(abs((sensMatrix(1:nbatches,:)-sensMatrix(nbatches+1:nbatches*2,:))./sensMatrix(1:nbatches,:)*100)');
+bar3(abs((sensMatrix(1:4,:)-sensMatrix(nbatches+1:nbatches+4,:))./sensMatrix(1:4,:)*100)');
+xlabel('batch'); ylabel('burn step'); zlabel('percent difference');
