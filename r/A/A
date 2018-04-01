@@ -28,8 +28,8 @@ surf fuelradial4       cyl 0.0 0.0 106.129       % Radial fuel zone (batch) 4/7
 surf fuelradial5       cyl 0.0 0.0 118.656       % Radial fuel zone (batch) 5/7
 surf fuelradial6       cyl 0.0 0.0 129.981       % Radial fuel zone (batch) 6/7
 surf fuelradial7       cyl 0.0 0.0 140.396       % Radial fuel zone (batch) 7/7
-surf radialreflector   cyl 0.0 0.0 162.451       % Radial reflector 
-surf radialshield      cyl 0.0 0.0 184.506       % Radial shield 
+surf radialreflector   cyl 0.0 0.0 158.561       % Radial reflector 
+surf radialshield      cyl 0.0 0.0 176.566       % Radial shield 
 surf radialsystem      cyl 0.0 0.0 284.506       % Radial total system 
 
 % ################################################################################### //// ######## //// ####### 
