@@ -1329,8 +1329,8 @@ ene spectrumGrid 3 1000 1E-4 1E1
 %set ngamma 2
 
 % --- include material definitions in separate file
-include "A_nonfuel"    
-include "A_mburn"
+include "A2_nonfuel"    
+include "A2_mburn"
 
 % --- set data library locations
 set acelib "/global/home/groups/co_nuclear/serpent/xsdata_2/endfb7/sss_endfb7u.xsdata" "/global/scratch/ckeckler/photon.xsdata"
