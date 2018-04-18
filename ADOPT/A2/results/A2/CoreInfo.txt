@@ -1,0 +1,208 @@
+             __                  __         
+            /\ \      v.2.1.0   /\ \__      
+     __     \_\ \    ___   _____\ \ ,_\     
+   /`__`\   /`_` \  / __`\/\ `__`\ \ \/     
+  /\ \L\.\_/\ \L\ \/\ \L\ \ \ \L\ \ \ \_    
+  \ \__/.\_\ \___,_\ \____/\ \ ,__/\ \__\   
+   \/__/\/_/\/__,_ /\/___/  \ \ \/  \/__/   
+                             \ \_\          
+         staffanq@gmail.com   \/_/          
+ 
+  Core name:  A2
+  TH iter. = 123
+  TH time:  49s, tot. time: 49s
+ 
+----- POWER ---------------------------------------
+  Total thermal power:  1400.00 MW 
+  Radial power peaking: 2.200 (d: 0.00%)
+ 
+----- POWER DENSITY -------------------------------
+  Core volumetric power density:  75.36 MW/m^3 
+  Core-averaged linear power:     14.09 kW/m   
+  Peak ax-averaged linear power:  30.99 kW/m   
+  Peak linear power:              46.49 kW/m   
+  Fuel specific power:            10.60 kW/kg  
+  BOC fissile specific power:     4239.98 kW/kg  
+ 
+----- PRIMARY LOOP FLOW CHARACTERISTICS -----------
+  Pressure drop:        1126.5 kPa   
+  Mass flow rate:       6914.4 kg/s  
+  Volumetric flow rate: 7.981 m^3/s 
+  Pumping power:        8.990 MW    
+ 
+----- PEAK-POWER ASSEMBLY INFO (full power) -------
+  Power:                      15.71 MW 
+  Mass flow:                  77.61 kg/s 
+  Interior channel velocity:  10.977 m/s  
+  Edge channel velocity:      11.999 m/s  
+  Corner channel velocity:    8.106 m/s  
+  Bundle pressure drop:       821.9 kPa 
+  Inlet pressure drop:        6.0 kPa 
+  Outlet pressure drop:       110.8 kPa 
+  Assembly pressure drop:     938.7 kPa 
+ 
+----- PEAK-POWER ASSEMBLY INFO (decay power) ------
+  Power:                       935.80 kW 
+  Mass flow:                   4.62 kg/s 
+  Interior channel velocity:   0.586 m/s  
+  Edge channel velocity:       0.898 m/s  
+  Corner channel velocity:     0.321 m/s  
+  Bundle pressure drop:        8196.7 Pa 
+  Inlet pressure drop:         84.7 Pa 
+  Outlet pressure drop:        247.8 Pa 
+  Pump pressure drop:          426.5 Pa 
+  Assembly pressure drop:      8529.1 Pa 
+  Primary cycle pressure drop: 10661.3 Pa 
+ 
+----- AVERAGE-POWER ASSEMBLY INFO -----------------
+  Power:                      7.14 MW 
+  Mass flow:                  35.28 kg/s 
+  Interior channel velocity:  4.990 m/s  
+  Edge channel velocity:      5.454 m/s  
+  Corner channel velocity:    3.685 m/s  
+  Bundle pressure drop:       195.7 kPa 
+  Inlet pressure drop:        1.8 kPa 
+  Outlet pressure drop:       20.3 kPa 
+  Orificing pressure drop:    720.8 kPa 
+  Assembly pressure drop:     938.7 kPa 
+ 
+----- NATURAL CIRCULATION / DECAY HEAT REMOVAL-----
+ 
+  Full-power nat. convection flow frac.: 2.9%
+ 
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  *
+  Thermal-center elevation needed for natural   
+  circulation decay heat removal: 24.27 m 
+  (at t=0s after shutdown) 
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  *
+ 
+----- TEMPERATURES --------------------------------
+  Coolant inlet T:         355.0 deg. C
+  Ave. coolant outlet T:   511.5 deg. C
+  Peak coolant outlet T:   536.0 deg. C
+  Peak clad outer T:       537.9 deg. C
+  Peak clad inner T:       547.7 deg. C
+  Peak fuel T:             657.7 deg. C
+ 
+----- ROD GEOMETRY --------------------------------
+  P/D:             1.11466
+  Rod pitch:       1.3608 cm 
+  Rod diameter:    1.2208 cm 
+  Fuel diameter:   0.9516 cm 
+  Clad thickness:  0.6104 mm 
+ 
+----- ASSEMBLY GEOMETRY --------------------------
+  Pins/assembly:                169
+  Duct thickness:               3.500 mm 
+  Inter-assembly gap:           2.000 mm 
+  Assembly pitch:               22.05 cm 
+  Assembly inner flat-to-flat:  20.78 cm 
+  Ducted assembly flat-to-flat: 18.70 cm 
+  Ducted assembly side length:  10.80 cm 
+ 
+----- DUCT SPECIFICS ----------------------------
+  Peak duct stress (corner):           0.0 MPa
+  Peak duct stress (mid-wall):         0.0 MPa
+  Duct thickness:                      3.500 mm 
+  Set EOL duct-gap margin:             0.000 mm 
+  Duct pressure-deflection:            0.000 mm 
+  EOL duct-gap reduction by creep:     0.000 mm 
+  EOL duct-gap reduction by swelling:  0.000 mm 
+  Design inter-assembly gap:           2.000 mm 
+ 
+----- CLADDING SPECIFICS ------------------------
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  - *  
+  System is using metallic fuel, liquid bond,        
+  and a smear density less than 100%. As the fuel    
+  swells with burnup, it expels bond (that doesn't   
+  infiltrate fuel pores) to the plenum, reducing     
+  the effective volume for gas in the upper gas      
+  plenum, which gives an effective length reduction  
+  of: 45.0 cm, from 10.0 cm to -35.0 cm. 
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  * 
+ 
+  Limiting factor for cladding: Not calculated
+ 
+  Cladding thickness ratio:     0.0500
+  Cladding thickness:           0.6104 mm  
+  Cumulative life-time creep:   0.00%
+  Cumulative damage fraction:   0.0000000
+ 
+  Exp. ave. plenum temperature:  566.0 dec. C
+  Expected fission gas release:  79.6%
+  Expected fission gas pressure: 0.2 MPa 
+  Expected FCMI pressure:        [n/a] 
+  Expected clad. stress (yield): 1.9 MPa (257.4 MPa)  
+ 
+  Design plenum temperature:     550.0 dec. C
+  Design fission gas release:    100.0%
+  Design fission gas pressure:   0.2 MPa 
+  Design FCMI pressure:          10.0 MPa 
+  Design-limiting pressure:      10.0 MPa 
+  Design clad. stress (yield):   95.0 MPa (250.5 MPa)  
+ 
+----- CORE GEOMETRY ------------------------------
+  # of fuel assembles:    196
+  # of control assembles: 0
+  # of fuel pins:         33124
+  Active core volume:     18.58 m^3 
+  Equiv. core diameter:   280.79 cm  
+  Active core height:     300.00 cm  
+  Core H/D ratio:         1.07     
+  Total fueled length:    99372 m   
+ 
+----- SYSTEM GEOMETRY ----------------------------
+  Core-assembly height:     318.00 cm  
+  Approx. vessel height:    7.83 m   
+  Approx. vessel diameter:  5.01 m   
+ 
+----- VOLUME FRACTIONS ---------------------------
+  Fuel:              38.04%
+  Gap:               12.68%
+  Cladding:          11.90%
+  Wire:              0.83%
+  Active coolant:    25.36%
+  Duct:              7.04%
+  IA coolant:        4.14%
+ 
+----- MASS FRACTIONS -----------------------------
+  Fuel:              79.79%
+  Gap:               1.19%
+  Cladding+wire:     10.18%
+  Active coolant:    2.80%
+  Duct:              6.04%
+ 
+----- MASSES --------(at BOC for fuel)------------
+  Total fuel mass:    132070 kg 
+  Actinides:          132070 kg 
+  Fuel non-actinides: -0 kg 
+  Fissile material:   330 kg 
+ 
+  Bond:               1971 kg 
+  Cladding:           16855 kg 
+  Coolant:            4632 kg 
+  Duct:               10004 kg 
+  Total core:         165532 kg 
+ 
+----- CORE-AVERAGED (smeared) DENSITIES ----------
+  Fuel:       7.11 g/cm^3 
+  Bond:       0.1 g/cm^3 
+  Cladding:   0.91 g/cm^3 
+  Coolant:    0.25 g/cm^3 
+  Duct:       0.54 g/cm^3 
+  Core:       8.91 g/cm^3 
+ 
+----- AVERAGE COMPONENT DENSITIES ----------------
+  Fuel:       18.69 g/cm^3 
+  Bond:       0.8 g/cm^3 
+  Cladding:   7.63 g/cm^3 
+  Coolant:    0.85 g/cm^3 
+  Duct:       7.65 g/cm^3 
+ 
+----- CONSTRAINTS --------------------------------
+  Peak flow velocity:  PASS
+  Core pressure drop:  PASS
+  Nat. circ FOM1:      PASS
+  Peak outer clad T:   PASS
+  Peak inner clad T:   PASS
+  Peak fuel T:         PASS

@@ -1,0 +1,361 @@
+##    ________________________________
+##    |                              |
+##    |    ______ _____  _  _____    |
+##    |   |  ____|  __ \(_)/ ____|   |
+##    |   | |__  | |  | |_| (___     |
+##    |   |  __| | |  | | |\___ \    |
+##    |   | |____| |__| | |____) |   |
+##    |   |______|_____/|_|_____/    |
+##    |                              |
+##    |    August 2013               |
+##    |______________________________|
+##    |                              |
+##    |    E: staffanq@gmail.com     |
+##    |______________________________|
+##    
+##    
+##    Checking the user settings...
+##    OK.
+##    
+##    Identifying the Serpent input file...
+##    OK.
+##    
+##    Checking for source normalization...
+##    OK.
+##    
+##    Checking for burnable materials...
+##    OK.
+##    
+##    Checking material printing settings...
+##    OK.
+##    
+##    Checking depletion settings...
+##    OK.
+##    
+##    Checking nuclide inventory...
+##    
+##    Analyzing shuffling scheme...
+##    OK.
+##    
+##    Checking burnable volumes...
+##    OK.
+##
+##    Preparing for STAGE-1 conditioning...
+##         - Adjusting neutron population
+##         - Switching off predictor/corrector
+##         - Adjusting buffer size
+##
+##    RUNNING STAGE-1 ANALYSIS
+##
+##    - STAGE-1 iteration 1 of 20 (finished in 1 hour, 26 minutes and 2 seconds) - 
+##    - STAGE-1 iteration 2 of 20 (finished in 1 hour, 23 minutes and 6 seconds) - 
+##    - STAGE-1 iteration 3 of 20 (finished in 1 hour, 22 minutes and 9 seconds) - 
+##    - STAGE-1 iteration 4 of 20 (finished in 1 hour, 20 minutes and 40 seconds) - 
+##    - STAGE-1 iteration 5 of 20 (finished in 1 hour, 21 minutes and 53 seconds) - 
+##    - STAGE-1 iteration 6 of 20 (finished in 1 hour, 20 minutes and 49 seconds) - 
+##    - STAGE-1 iteration 7 of 20 (finished in 1 hour, 21 minutes and 22 seconds) - 
+##    - STAGE-1 iteration 8 of 20 (finished in 1 hour, 21 minutes and 21 seconds) - 
+##    - STAGE-1 iteration 9 of 20 (finished in 1 hour, 22 minutes and 9 seconds) - 
+##    - STAGE-1 iteration 10 of 20 (finished in 1 hour, 19 minutes and 34 seconds) - 
+##    - STAGE-1 iteration 11 of 20 (finished in 1 hour, 21 minutes and 29 seconds) - 
+##    - STAGE-1 iteration 12 of 20 (finished in 1 hour, 21 minutes and 18 seconds) - 
+##    - STAGE-1 iteration 13 of 20 (finished in 1 hour, 21 minutes and 54 seconds) - 
+##    - STAGE-1 iteration 14 of 20 (finished in 1 hour, 21 minutes and 51 seconds) - 
+##    - STAGE-1 iteration 15 of 20 (finished in 1 hour, 19 minutes and 49 seconds) - 
+##    - STAGE-1 iteration 16 of 20 (finished in 1 hour, 20 minutes and 45 seconds) - 
+##    - STAGE-1 iteration 17 of 20 (finished in 1 hour, 21 minutes and 52 seconds) - 
+##    - STAGE-1 iteration 18 of 20 (finished in 1 hour, 19 minutes and 56 seconds) - 
+##    - STAGE-1 iteration 19 of 20 (finished in 1 hour, 22 minutes and 18 seconds) - 
+##    - STAGE-1 iteration 20 of 20 (finished in 1 hour, 21 minutes and 31 seconds) - 
+##    
+##    ---------------------------------------------------------------
+##    STAGE-1 conditioning complete in 27 hours, 13 minutes and 5 seconds
+##    ---------------------------------------------------------------
+##    
+##    Preparing for STAGE-2 conditioning...
+##         - Adjusting neutron population
+##         - Switching off predictor/corrector
+##         - Adjusting buffer size
+##
+##    RUNNING STAGE-2 ANALYSIS
+##
+##    - STAGE-2 iteration 21 of 62 (finished in 14 hours, 4 minutes and 57 seconds) - 
+##    
+##    Largest k_eff discrepancy is 0.00% at burnup step 3
+##    Largest material discrepancy is U-238 in zone Batch14Axial9, error is 0.00%
+##    
+///----------------------------------------------------------------------///
+|                                                                       
+|     System reached target convergence in 41 hours, 18 minutes and 5 seconds
+|                                                                     
+|     Eq. cycle time was set at 600 days
+|     Fuel residence time is 23 years and 5 days
+|                                                                     
+|     Min/max cycle k_eff is 0.98952 / 1.03258
+|     Error in min. k_eff compared to target is 1.05%
+|                                                                       
+|     Positive burnup reactivity swing, increasing cycle length
+|     Cycle time changed from 600.0 days to 750.0 days
+|                                                                         
+|     Starting a new STAGE-1 eq. cycle run with the updated cycle time    
+|                                                                           
+///----------------------------------------------------------------------///
+##    
+##    - STAGE-1 iteration 1 of 20 (finished in 1 hour, 21 minutes and 1 second) - 
+##    - STAGE-1 iteration 2 of 20 (finished in 1 hour, 20 minutes and 50 seconds) - 
+##    - STAGE-1 iteration 3 of 20 (finished in 1 hour, 20 minutes and 8 seconds) - 
+##    
+##    Largest k_eff discrepancy is 0.46% at burnup step 2
+##    Largest material discrepancy is U-238 in zone Batch6Axial5, error is 1.51%
+##    
+##    - STAGE-1 iteration 4 of 20 (finished in 1 hour, 22 minutes and 41 seconds) - 
+##    
+##    Largest k_eff discrepancy is 0.38% at burnup step 1
+##    Largest material discrepancy is U-238 in zone Batch2Axial5, error is 1.42%
+##    
+##    - STAGE-1 iteration 5 of 20 (finished in 1 hour, 20 minutes and 29 seconds) - 
+##    
+##    Largest k_eff discrepancy is 0.30% at burnup step 1
+##    Largest material discrepancy is U-238 in zone Batch3Axial5, error is 1.42%
+##    
+##    - STAGE-1 iteration 6 of 20 (finished in 1 hour, 21 minutes and 56 seconds) - 
+##    
+##    Largest k_eff discrepancy is 0.15% at burnup step 2
+##    Largest material discrepancy is U-238 in zone Batch4Axial5, error is 1.31%
+##    
+##    - STAGE-1 iteration 7 of 20 (finished in 1 hour, 21 minutes and 49 seconds) - 
+##    
+##    Largest k_eff discrepancy is 0.19% at burnup step 1
+##    Largest material discrepancy is U-238 in zone Batch5Axial5, error is 1.27%
+##    
+##    - STAGE-1 iteration 8 of 20 (finished in 1 hour, 20 minutes and 45 seconds) - 
+##    
+##    Largest k_eff discrepancy is 0.12% at burnup step 1
+##    Largest material discrepancy is U-238 in zone Batch10Axial5, error is 1.21%
+##    
+##    - STAGE-1 iteration 9 of 20 (finished in 1 hour, 20 minutes and 30 seconds) - 
+##    
+##    Largest k_eff discrepancy is 0.12% at burnup step 2
+##    Largest material discrepancy is U-238 in zone Batch10Axial6, error is 0.35%
+##    
+##    - STAGE-1 iteration 10 of 20 (finished in 1 hour, 21 minutes and 18 seconds) - 
+##    
+##    Largest k_eff discrepancy is 0.12% at burnup step 1
+##    Largest material discrepancy is U-238 in zone Batch10Axial7, error is 0.33%
+##    
+##    - STAGE-1 iteration 11 of 20 (finished in 1 hour, 24 minutes and 5 seconds) - 
+##    
+##    Largest k_eff discrepancy is 0.14% at burnup step 2
+##    Largest material discrepancy is U-238 in zone Batch2Axial6, error is 0.28%
+##    
+##    - STAGE-1 iteration 12 of 20 (finished in 1 hour, 22 minutes and 13 seconds) - 
+##    
+##    Largest k_eff discrepancy is 0.12% at burnup step 2
+##    Largest material discrepancy is U-238 in zone Batch3Axial5, error is 0.33%
+##    
+##    - STAGE-1 iteration 13 of 20 (finished in 1 hour, 21 minutes and 18 seconds) - 
+##    
+##    Largest k_eff discrepancy is 0.05% at burnup step 3
+##    Largest material discrepancy is U-238 in zone Batch4Axial6, error is 0.35%
+##    
+##    - STAGE-1 iteration 14 of 20 (finished in 1 hour, 22 minutes and 17 seconds) - 
+##    
+##    Largest k_eff discrepancy is 0.05% at burnup step 1
+##    Largest material discrepancy is U-238 in zone Batch5Axial6, error is 0.31%
+##    
+##    - STAGE-1 iteration 15 of 20 (finished in 1 hour, 25 minutes and 39 seconds) - 
+##    
+##    Largest k_eff discrepancy is 0.07% at burnup step 1
+##    Largest material discrepancy is U-238 in zone Batch10Axial6, error is 0.28%
+##    
+##    - STAGE-1 iteration 16 of 20 (finished in 1 hour, 22 minutes and 27 seconds) - 
+##    
+##    Largest k_eff discrepancy is 0.21% at burnup step 2
+##    Largest material discrepancy is U-238 in zone Batch4Axial5, error is 0.20%
+##    
+##    - STAGE-1 iteration 17 of 20 (finished in 1 hour, 22 minutes and 37 seconds) - 
+##    
+##    Largest k_eff discrepancy is 0.13% at burnup step 2
+##    Largest material discrepancy is U-238 in zone Batch5Axial5, error is 0.21%
+##    
+##    - STAGE-1 iteration 18 of 20 (finished in 1 hour, 22 minutes and 1 second) - 
+##    
+##    Largest k_eff discrepancy is 0.15% at burnup step 1
+##    Largest material discrepancy is U-238 in zone Batch10Axial5, error is 0.20%
+##    
+##    - STAGE-1 iteration 19 of 20 (finished in 1 hour, 21 minutes and 58 seconds) - 
+##    
+##    Largest k_eff discrepancy is 0.12% at burnup step 2
+##    Largest material discrepancy is U-238 in zone Batch5Axial5, error is 0.17%
+##    
+##    - STAGE-1 iteration 20 of 20 (finished in 1 hour, 24 minutes and 9 seconds) - 
+##    
+##    Largest k_eff discrepancy is 0.15% at burnup step 2
+##    Largest material discrepancy is U-238 in zone Batch10Axial5, error is 0.14%
+##    
+##    
+##    ---------------------------------------------------------------
+##    STAGE-1 conditioning complete in 27 hours, 21 minutes and 39 seconds
+##    ---------------------------------------------------------------
+##    
+##    Preparing for STAGE-2 conditioning...
+##         - Adjusting neutron population
+##         - Switching off predictor/corrector
+##         - Adjusting buffer size
+##
+##    RUNNING STAGE-2 ANALYSIS
+##
+##    - STAGE-2 iteration 21 of 62 (finished in 14 hours, 39 minutes and 57 seconds) - 
+##    
+##    Largest k_eff discrepancy is 0.03% at burnup step 1
+##    Largest material discrepancy is U-238 in zone Batch7Axial5, error is 0.11%
+##    
+///----------------------------------------------------------------------///
+|                                                                       
+|     System reached target convergence in 42 hours, 1 minute and 38 seconds
+|                                                                     
+|     Eq. cycle time was set at 750 days
+|     Fuel residence time is 28 years and 280 days
+|                                                                     
+|     Min/max cycle k_eff is 1.01062 / 1.04965
+|     Error in min. k_eff compared to target is 1.06%
+|                                                                       
+|     2nd run, eq. cycle time of 750.0 days had a min. k_eff of 1.01062
+|     Aiming at critical eq. cycle at a cycle of around 675 days
+|                                                                         
+|     Starting a new STAGE-1 eq. cycle run with the updated cycle time
+|
+///----------------------------------------------------------------------///
+##    
+##    - STAGE-1 iteration 1 of 20 (finished in 1 hour, 18 minutes and 35 seconds) - 
+##    - STAGE-1 iteration 2 of 20 (finished in 1 hour, 18 minutes and 38 seconds) - 
+##    - STAGE-1 iteration 3 of 20 (finished in 1 hour, 18 minutes and 38 seconds) - 
+##    
+##    Largest k_eff discrepancy is 0.27% at burnup step 2
+##    Largest material discrepancy is U-238 in zone Batch4Axial5, error is 0.77%
+##    
+##    - STAGE-1 iteration 4 of 20 (finished in 1 hour, 18 minutes and 44 seconds) - 
+##    
+##    Largest k_eff discrepancy is 0.12% at burnup step 1
+##    Largest material discrepancy is U-238 in zone Batch2Axial5, error is 0.74%
+##    
+##    - STAGE-1 iteration 5 of 20 (finished in 1 hour, 19 minutes and 35 seconds) - 
+##    
+##    Largest k_eff discrepancy is 0.20% at burnup step 2
+##    Largest material discrepancy is U-238 in zone Batch10Axial5, error is 0.62%
+##    
+##    - STAGE-1 iteration 6 of 20 (finished in 1 hour, 18 minutes and 40 seconds) - 
+##    
+##    Largest k_eff discrepancy is 0.13% at burnup step 3
+##    Largest material discrepancy is U-238 in zone Batch4Axial4, error is 0.61%
+##    
+##    - STAGE-1 iteration 7 of 20 (finished in 1 hour, 18 minutes and 18 seconds) - 
+##    
+##    Largest k_eff discrepancy is 0.25% at burnup step 3
+##    Largest material discrepancy is U-238 in zone Batch5Axial6, error is 0.57%
+##    
+##    - STAGE-1 iteration 8 of 20 (finished in 1 hour, 18 minutes and 50 seconds) - 
+##    
+##    Largest k_eff discrepancy is 0.25% at burnup step 3
+##    Largest material discrepancy is U-238 in zone Batch10Axial4, error is 0.56%
+##    
+##    - STAGE-1 iteration 9 of 20 (finished in 1 hour, 19 minutes and 59 seconds) - 
+##    
+##    Largest k_eff discrepancy is 0.11% at burnup step 3
+##    Largest material discrepancy is U-238 in zone Batch5Axial6, error is 0.27%
+##    
+##    - STAGE-1 iteration 10 of 20 (finished in 1 hour, 18 minutes and 2 seconds) - 
+##    
+##    Largest k_eff discrepancy is 0.12% at burnup step 1
+##    Largest material discrepancy is U-238 in zone Batch5Axial4, error is 0.21%
+##    
+##    - STAGE-1 iteration 11 of 20 (finished in 1 hour, 18 minutes and 8 seconds) - 
+##    
+##    Largest k_eff discrepancy is 0.12% at burnup step 1
+##    Largest material discrepancy is U-238 in zone Batch10Axial4, error is 0.19%
+##    
+##    - STAGE-1 iteration 12 of 20 (finished in 1 hour, 18 minutes and 28 seconds) - 
+##    
+##    Largest k_eff discrepancy is 0.09% at burnup step 1
+##    Largest material discrepancy is U-238 in zone Batch4Axial3, error is 0.18%
+##    
+##    - STAGE-1 iteration 13 of 20 (finished in 1 hour, 18 minutes and 6 seconds) - 
+##    
+##    Largest k_eff discrepancy is 0.17% at burnup step 1
+##    Largest material discrepancy is U-238 in zone Batch2Axial5, error is 0.18%
+##    
+##    - STAGE-1 iteration 14 of 20 (finished in 1 hour, 17 minutes and 51 seconds) - 
+##    
+##    Largest k_eff discrepancy is 0.10% at burnup step 3
+##    Largest material discrepancy is U-238 in zone Batch3Axial5, error is 0.22%
+##    
+##    - STAGE-1 iteration 15 of 20 (finished in 1 hour, 18 minutes and 7 seconds) - 
+##    
+##    Largest k_eff discrepancy is 0.11% at burnup step 3
+##    Largest material discrepancy is U-238 in zone Batch4Axial5, error is 0.24%
+##    
+##    - STAGE-1 iteration 16 of 20 (finished in 1 hour, 18 minutes and 49 seconds) - 
+##    
+##    Largest k_eff discrepancy is 0.10% at burnup step 2
+##    Largest material discrepancy is U-238 in zone Batch5Axial5, error is 0.22%
+##    
+##    - STAGE-1 iteration 17 of 20 (finished in 1 hour, 19 minutes and 20 seconds) - 
+##    
+##    Largest k_eff discrepancy is 0.15% at burnup step 2
+##    Largest material discrepancy is U-238 in zone Batch10Axial5, error is 0.19%
+##    
+##    - STAGE-1 iteration 18 of 20 (finished in 1 hour, 18 minutes and 14 seconds) - 
+##    
+##    Largest k_eff discrepancy is 0.22% at burnup step 3
+##    Largest material discrepancy is U-238 in zone Batch5Axial5, error is 0.18%
+##    
+##    - STAGE-1 iteration 19 of 20 (finished in 1 hour, 18 minutes and 43 seconds) - 
+##    
+##    Largest k_eff discrepancy is 0.23% at burnup step 3
+##    Largest material discrepancy is U-238 in zone Batch6Axial5, error is 0.18%
+##    
+##    - STAGE-1 iteration 20 of 20 (finished in 1 hour, 18 minutes and 35 seconds) - 
+##    
+##    Largest k_eff discrepancy is 0.08% at burnup step 3
+##    Largest material discrepancy is U-238 in zone Batch2Axial5, error is 0.19%
+##    
+##    
+##    ---------------------------------------------------------------
+##    STAGE-1 conditioning complete in 26 hours, 13 minutes and 47 seconds
+##    ---------------------------------------------------------------
+##    
+##    Preparing for STAGE-2 conditioning...
+##         - Adjusting neutron population
+##         - Switching off predictor/corrector
+##         - Adjusting buffer size
+##
+##    RUNNING STAGE-2 ANALYSIS
+##
+##    - STAGE-2 iteration 21 of 62 (finished in 13 hours, 54 minutes and 17 seconds) - 
+##    
+##    Largest k_eff discrepancy is 0.10% at burnup step 2
+##    Largest material discrepancy is U-238 in zone Batch10Axial4, error is 3.25%
+##    
+##    - STAGE-2 iteration 22 of 62 (finished in 13 hours, 51 minutes and 47 seconds) - 
+##    
+##    Largest k_eff discrepancy is 0.04% at burnup step 2
+##    Largest material discrepancy is U-238 in zone Batch14Axial9, error is 0.00%
+##    
+///----------------------------------------------------------------------///
+|                                                                       
+|     System reached target convergence in 27 hours, 46 minutes and 10 seconds
+|                                                                     
+|     Eq. cycle time was set at 675 days
+|     Fuel residence time is 25 years and 318 days
+|                                                                     
+|     Min/max cycle k_eff is 1.00139 / 1.04198
+|     Error in min. k_eff compared to target is 0.14%
+|                                                                       
+|     Total calculation time was 137 hours, 19 minutes and 52 seconds
+|                                                                         
+|     To improve results, use better statistics, tighter convergence criteria
+|     and more burnup steps!
+|     
+|     Thank you for using EDIS! (Every day I'm shuffling!)
+|
+///----------------------------------------------------------------------///

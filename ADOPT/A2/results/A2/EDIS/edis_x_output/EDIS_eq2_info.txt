@@ -1,0 +1,29 @@
+///----------------------------------------------------------------------///
+|                                                                       
+|     System reached target convergence in 27 hours, 46 minutes and 10 seconds
+|                                                                     
+|     Eq. cycle time was set at 675 days
+|     Fuel residence time is 25 years and 318 days
+|                                                                     
+|     Min/max cycle k_eff is 1.00139 / 1.04198
+|     Error in min. k_eff compared to target is 0.14%
+|                                                                       
+///----------------------------------------------------------------------///
+
+--------------------------------------------
+-- Eq. cycle discharge burnup --------------
+--------------------------------------------
+
+  Average discharge burnup: 100.30 MWd/kg-actinide (10.08% FIMA)
+  Axial power peak: 2.75 (max/ave)
+  Radial power peak: 2.49 (max/ave)
+
+ - Axial zone 1: 1.19 MWd/kg-actinide (0.12% FIMA)
+ - Axial zone 2: 11.03 MWd/kg-actinide (1.11% FIMA)
+ - Axial zone 3: 79.23 MWd/kg-actinide (7.96% FIMA)
+ - Axial zone 4: 210.40 MWd/kg-actinide (21.15% FIMA)
+ - Axial zone 5: 275.70 MWd/kg-actinide (27.71% FIMA)
+ - Axial zone 6: 221.52 MWd/kg-actinide (22.27% FIMA)
+ - Axial zone 7: 90.61 MWd/kg-actinide (9.11% FIMA)
+ - Axial zone 8: 12.47 MWd/kg-actinide (1.25% FIMA)
+ - Axial zone 9: 0.58 MWd/kg-actinide (0.06% FIMA)
