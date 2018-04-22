@@ -6,7 +6,7 @@
 
 #SBATCH --error=A2.error
 
-#SBATCH --partition=savio
+#SBATCH --partition=savio2
 
 #SBATCH --time=72:00:00
 
