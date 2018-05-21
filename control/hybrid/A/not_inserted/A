@@ -367,3 +367,5 @@ ene pertgrid 1 1E-10 1E3
 
 % --- print cross sections
 %set xsplot 1000 1E-3 1E1
+
+plot 3 300 300 150
