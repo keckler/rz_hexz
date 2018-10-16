@@ -12,3 +12,4 @@ ADOPT/*_stage2*
 ADOPT/*_eq1*
 ADOPT/ADOPT.o
 *.dep
+sourcefile*
